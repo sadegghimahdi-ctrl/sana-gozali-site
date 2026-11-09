@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سنا گوزلی | نویسنده</title>
+  <meta name="description" content="سایت رسمی سنا گوزلی، نویسنده کتاب‌های دل‌نوشته و انگیزشی. با آثار او آشنا شوید و پیام بفرستید." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #faf6f1;
+      --warm-beige: #f3ebe0;
+      --soft-gold: #c9a87c;
+      --deep-brown: #4a3728;
+      --soft-green: #8a9a7b;
+      --muted-rose: #d4a5a5;
+      --text: #3d2c1e;
+      --text-light: #6b5a4a;
+      --card-bg: #fffdf9;
+      --shadow: 0 12px 40px rgba(74, 55, 40, 0.08);
+      --radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Soft background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(201, 168, 124, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(138, 154, 123, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(212, 165, 165, 0.06) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      padding: 28px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(250, 246, 241, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(201, 168, 124, 0.15);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--deep-brown);
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--soft-gold);
+      font-weight: 400;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin-right: 28px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+
+    nav a:hover {
+      color: var(--soft-gold);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--deep-brown);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .hero-content .tagline {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    .hero-content p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #c9a87c, #b8956a);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(201, 168, 124, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201, 168, 124, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--deep-brown);
+      border: 1.5px solid var(--soft-gold);
+    }
+
+    .btn-outline:hover {
+      background: rgba(201, 168, 124, 0.1);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: 10%;
+      width: 80%;
+      height: 40px;
+      background: rgba(201, 168, 124, 0.25);
+      filter: blur(25px);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    /* Quote section */
+    .quote-section {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .quote-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      box-shadow: var(--shadow);
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      border: 1px solid rgba(201, 168, 124, 0.12);
+    }
+
+    .quote-box::before {
+      content: '“';
+      position: absolute;
+      top: 12px;
+      right: 28px;
+      font-size: 5rem;
+      color: rgba(201, 168, 124, 0.2);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .quote-box p {
+      font-size: 1.25rem;
+      color: var(--deep-brown);
+      font-weight: 500;
+      line-height: 2;
+    }
+
+    .quote-box .author {
+      margin-top: 20px;
+      color: var(--soft-gold);
+      font-size: 0.95rem;
+    }
+
+    /* Books */
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--deep-brown);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      justify-items: center;
+    }
+
+    .book-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      max-width: 320px;
+      width: 100%;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      border: 1px solid rgba(201, 168, 124, 0.1);
+    }
+
+    .book-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(74, 55, 40, 0.12);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .book-info {
+      padding: 24px 22px 28px;
+      text-align: center;
+    }
+
+    .book-info h3 {
+      font-size: 1.15rem;
+      color: var(--deep-brown);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .book-info p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+
+    /* About */
+    .about {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 1.9rem;
+      color: var(--deep-brown);
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-height: 420px;
+      object-fit: cover;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+      padding: 80px 0 100px;
+    }
+
+    .contact-box {
+      background: linear-gradient(145deg, #fffdf9, #f8f1e7);
+      border-radius: 28px;
+      padding: 56px 40px;
+      box-shadow: var(--shadow);
+      max-width: 560px;
+      margin: 0 auto;
+      border: 1px solid rgba(201, 168, 124, 0.18);
+    }
+
+    .contact-box h2 {
+      font-size: 1.8rem;
+      color: var(--deep-brown);
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: var(--text-light);
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+    }
+
+    .rubika-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #4a90a4, #3a7a8c);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(74, 144, 164, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .rubika-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(74, 144, 164, 0.45);
+    }
+
+    .rubika-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .username {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      direction: ltr;
+      display: inline-block;
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0;
+      text-align: center;
+      border-top: 1px solid rgba(201, 168, 124, 0.15);
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+        padding: 50px 0 40px;
+      }
+
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-image {
+        order: -1;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero-content h1 {
+        font-size: 1.85rem;
+      }
+
+      .quote-box {
+        padding: 36px 24px;
+      }
+
+      .quote-box p {
+        font-size: 1.1rem;
+      }
+
+      .book-card img {
+        height: 360px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="logo">سنا <span>گوزلی</span></div>
+      <nav>
+        <a href="#books">کتاب‌ها</a>
+        <a href="#about">درباره</a>
+        <a href="#contact">تماس</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="hero-content">
+        <h1>سنا گوزلی</h1>
+        <p class="tagline">نویسنده · دل‌نوشته‌ها و روایت‌های انگیزشی</p>
+        <p>
+          با کلمات ساده اما عمیق، لحظه‌هایی را روایت می‌کند که زندگی در آن‌ها مکث می‌کند؛
+          جایی میان پایان و آغاز. اینجا می‌توانید با آثار او آشنا شوید و مستقیم پیام بفرستید.
+        </p>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-start;">
+          <a href="#books" class="btn btn-primary">مشاهده کتاب‌ها</a>
+          <a href="#contact" class="btn btn-outline">پیام به نویسنده</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/1000020713.jpg" alt="سنا گوزلی" />
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-section container">
+      <div class="quote-box">
+        <p>
+          گاهی زندگی ما را در نقطه‌ای متوقف می‌کند<br />
+          که نه کاملاً پایان است و نه آغاز...
+        </p>
+        <div class="author">— از کتاب «تا اینجا کافیست؟ یا ادامه میدی!»</div>
+      </div>
+    </section>
+
+    <!-- Books -->
+    <section class="section" id="books">
+      <div class="container">
+        <div class="section-title">
+          <h2>کتاب‌ها</h2>
+          <p>آثار منتشرشده سنا گوزلی</p>
+        </div>
+        <div class="books-grid">
+          <!-- Book 1: Dark motivational -->
+          <article class="book-card">
+            <img src="images/1000020711.jpg" alt="تا اینجا کافیست؟ یا ادامه میدی!" />
+            <div class="book-info">
+              <h3>تا اینجا کافیست؟ یا ادامه میدی!</h3>
+              <p>
+                روایتی انگیزشی درباره نقطه‌هایی از زندگی که نه پایان‌اند و نه آغاز.
+                دعوتی برای ادامه دادن با امید.
+              </p>
+            </div>
+          </article>
+
+          <!-- Book 2: Soft calligraphy -->
+          <article class="book-card">
+            <img src="images/1000020712.jpg" alt="دل‌نوشته حقیقت سکوت" />
+            <div class="book-info">
+              <h3>دل‌نوشته حقیقت سکوت</h3>
+              <p>
+                مجموعه‌ای از دل‌نوشته‌ها با طراحی آرام و خوشنویسی‌شده؛
+                فضایی نرم برای تأمل و سکوت درونی.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about" style="background: rgba(243, 235, 224, 0.4);">
+      <div class="container about">
+        <div class="about-image">
+          <img src="images/1000020713.jpg" alt="سنا گوزلی در حال نوشتن" />
+        </div>
+        <div class="about-text">
+          <h2>درباره نویسنده</h2>
+          <p>
+            سنا گوزلی نویسنده‌ای است که با نگاهی لطیف و واقعی به لحظه‌های ایستاده زندگی می‌پردازد.
+            نوشته‌های او ترکیبی از دل‌نوشته، تأمل و انگیزش است؛ جایی که خواننده احساس می‌کند
+            کسی درست کنارش نشسته و آرام با او حرف می‌زند.
+          </p>
+          <p>
+            اگر کتاب‌ها را خوانده‌اید یا می‌خواهید درباره‌شان صحبت کنید،
+            خوشحال می‌شود پیامتان را دریافت کند.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2>پیام به سنا گوزلی</h2>
+          <p>
+            بعد از دیدن کتاب‌ها می‌توانید مستقیم در روبیکا برای او پیام بفرستید.
+          </p>
+          <a href="https://rubika.ir/@HFHjghfse" class="rubika-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+              <path d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/>
+            </svg>
+            پیام در روبیکا
+          </a>
+          <div class="username">@HFHjghfse</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © ۱۴۰۵ · سنا گوزلی · تمامی حقوق محفوظ است
+    </div>
+  </footer>
+</body>
+</html>
